@@ -1,8 +1,12 @@
 from fastapi import FastAPI
+from dotenv import load_dotenv
+
+load_dotenv()
+
 import uvicorn
 from copilotkit import CopilotKitSDK, LangGraphAgent
 from copilotkit.integrations.fastapi import add_fastapi_endpoint
-
+from smartscribe.smartscribe import graph
 
 app = FastAPI()
 sdk = CopilotKitSDK(
